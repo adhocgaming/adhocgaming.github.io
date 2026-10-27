@@ -132,15 +132,19 @@ body {
 .tag span {
     /* outline drawn behind the fill so the letterform stays crisp */
     paint-order: stroke fill;
-    -webkit-text-stroke: 0.09em #000;
+    -webkit-text-stroke: 0.08em #000;
+    /* hard extrusion in a darker shade of the letter, then a soft glow */
     text-shadow:
-        0 3px 0 rgba(0, 0, 0, 0.85),
-        0 6px 14px rgba(0, 0, 0, 0.6);
+        0 0.06em 0 var(--shade),
+        0 0.12em 0 var(--shade),
+        0 0.16em 0 rgba(0, 0, 0, 0.9),
+        0 0.3em 0.6em rgba(0, 0, 0, 0.8),
+        0 0 0.6em var(--glow);
 }
 
-.tag span:nth-child(1) { color: var(--ahg-red); }
-.tag span:nth-child(2) { color: var(--ahg-green); }
-.tag span:nth-child(3) { color: var(--ahg-blue); }
+.tag span:nth-child(1) { color: var(--ahg-red);   --shade: #7a1626; --glow: rgba(224, 69, 90, 0.45); }
+.tag span:nth-child(2) { color: var(--ahg-green); --shade: #1f6b1c; --glow: rgba(79, 214, 74, 0.45); }
+.tag span:nth-child(3) { color: var(--ahg-blue);  --shade: #1e2a80; --glow: rgba(75, 95, 224, 0.5); }
 
 
 .description,
