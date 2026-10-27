@@ -138,13 +138,12 @@ body {
         0.05em 0.05em 0 var(--shade),
         0.1em 0.1em 0 var(--shade),
         0.14em 0.14em 0 rgba(0, 0, 0, 0.9),
-        0.25em 0.3em 0.6em rgba(0, 0, 0, 0.8),
-        0 0 0.6em var(--glow);
+        0 0 0.2em var(--glow);
 }
 
-.tag span:nth-child(1) { color: var(--ahg-red);   --shade: #7a1626; --glow: rgba(224, 69, 90, 0.45); }
-.tag span:nth-child(2) { color: var(--ahg-green); --shade: #1f6b1c; --glow: rgba(79, 214, 74, 0.45); }
-.tag span:nth-child(3) { color: var(--ahg-blue);  --shade: #1e2a80; --glow: rgba(75, 95, 224, 0.5); }
+.tag span:nth-child(1) { color: var(--ahg-red);   --shade: #7a1626; --glow: rgba(224, 69, 90, 0.35); }
+.tag span:nth-child(2) { color: var(--ahg-green); --shade: #1f6b1c; --glow: rgba(79, 214, 74, 0.35); }
+.tag span:nth-child(3) { color: var(--ahg-blue);  --shade: #1e2a80; --glow: rgba(75, 95, 224, 0.4); }
 
 
 .description,
