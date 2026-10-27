@@ -132,12 +132,22 @@ body {
 .tag span {
     /* outline drawn behind the fill so the letterform stays crisp */
     paint-order: stroke fill;
-    -webkit-text-stroke: 0.08em #000;
+    -webkit-text-stroke: 0.06em #000;
     /* hard extrusion to the bottom-right in a darker shade of the letter, then a soft glow */
+    /* many 0.01em steps so the extrusion is one smooth solid rather than a staircase */
     text-shadow:
+        0.01em 0.01em 0 var(--shade),
+        0.02em 0.02em 0 var(--shade),
+        0.03em 0.03em 0 var(--shade),
+        0.04em 0.04em 0 var(--shade),
         0.05em 0.05em 0 var(--shade),
-        0.1em 0.1em 0 var(--shade),
-        0.14em 0.14em 0 rgba(0, 0, 0, 0.9),
+        0.06em 0.06em 0 var(--shade),
+        0.07em 0.07em 0 var(--shade),
+        0.08em 0.08em 0 var(--shade),
+        0.09em 0.09em 0 var(--shade),
+        0.10em 0.10em 0 var(--shade),
+        0.11em 0.11em 0 #000,
+        0.12em 0.12em 0 #000,
         0 0 0.2em var(--glow);
 }
 
