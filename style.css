@@ -133,12 +133,12 @@ body {
     /* outline drawn behind the fill so the letterform stays crisp */
     paint-order: stroke fill;
     -webkit-text-stroke: 0.08em #000;
-    /* hard extrusion in a darker shade of the letter, then a soft glow */
+    /* hard extrusion to the bottom-right in a darker shade of the letter, then a soft glow */
     text-shadow:
-        0 0.06em 0 var(--shade),
-        0 0.12em 0 var(--shade),
-        0 0.16em 0 rgba(0, 0, 0, 0.9),
-        0 0.3em 0.6em rgba(0, 0, 0, 0.8),
+        0.05em 0.05em 0 var(--shade),
+        0.1em 0.1em 0 var(--shade),
+        0.14em 0.14em 0 rgba(0, 0, 0, 0.9),
+        0.25em 0.3em 0.6em rgba(0, 0, 0, 0.8),
         0 0 0.6em var(--glow);
 }
 
