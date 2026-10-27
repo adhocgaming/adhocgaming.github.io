@@ -130,9 +130,6 @@ body {
 }
 
 .tag span {
-    /* outline drawn behind the fill so the letterform stays crisp */
-    paint-order: stroke fill;
-    -webkit-text-stroke: 0.06em #000;
     /* hard extrusion to the bottom-right in a darker shade of the letter, then a soft glow */
     /* many 0.01em steps so the extrusion is one smooth solid rather than a staircase */
     text-shadow:
