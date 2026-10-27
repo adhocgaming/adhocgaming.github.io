@@ -281,7 +281,11 @@ body {
 .link .fa-discord { color: #7289da; }
 .link .fa-youtube { color: var(--ahg-red); }
 .link .fa-twitch { color: #a970ff; }
-.link .fa-tiktok { color: var(--color-text); }
+.link .fa-tiktok {
+    /* TikTok's glitch look: white mark with cyan and pink offsets */
+    color: #fff;
+    text-shadow: -1.5px -1px 0 #25f4ee, 1.5px 1px 0 #fe2c55;
+}
 .link .fa-bolt { color: var(--ahg-yellow); }
 
 /* "coming soon" links are visibly disabled */
