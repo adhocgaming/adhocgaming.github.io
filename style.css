@@ -99,7 +99,7 @@ body {
 
 .logo {
     display: block;
-    width: clamp(140px, 40vw, 220px);
+    width: clamp(200px, 65vw, 300px);
     margin: var(--space-sm) auto var(--space-md);
     border-radius: 50%;
     box-shadow:
