@@ -146,9 +146,23 @@ body {
 }
 
 .copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     margin-top: var(--space-xl);
     font-size: 0.8rem;
     color: var(--color-text-muted);
+}
+
+.copyright .tagline {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 /* --------------------------------------------------------------------------
