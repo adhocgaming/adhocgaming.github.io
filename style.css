@@ -26,7 +26,16 @@
     /* accents */
     --color-accent: var(--ahg-blue);
     --color-accent-soft: rgba(75, 95, 224, 0.18);
-    --gradient-brand: linear-gradient(90deg, var(--ahg-red), var(--ahg-green), var(--ahg-blue));
+    /* hard-edged stripes (two cycles so the pattern can scroll seamlessly) */
+    --gradient-brand: linear-gradient(
+        90deg,
+        var(--ahg-red) 0 16.667%,
+        var(--ahg-green) 16.667% 33.333%,
+        var(--ahg-blue) 33.333% 50%,
+        var(--ahg-red) 50% 66.667%,
+        var(--ahg-green) 66.667% 83.333%,
+        var(--ahg-blue) 83.333% 100%
+    );
 
     /* layout */
     --page-gutter: clamp(16px, 5vw, 32px);
@@ -127,9 +136,17 @@ body {
     line-height: 1.15;
     text-decoration: none;
     background: var(--gradient-brand);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: stripe-cycle 3s steps(3, end) infinite;
+}
+
+/* RuneScape-style colour cycling: each step shifts the stripes one band */
+@keyframes stripe-cycle {
+    from { background-position: 0 0; }
+    to { background-position: -100% 0; }
 }
 
 .description,
@@ -158,11 +175,13 @@ body {
     font-weight: 600;
     letter-spacing: 0.04em;
     background: var(--gradient-brand);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     width: fit-content;
     margin: 0 auto;
+    animation: stripe-cycle 3s steps(3, end) infinite;
 }
 
 /* --------------------------------------------------------------------------
