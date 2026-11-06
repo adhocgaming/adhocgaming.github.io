@@ -13,9 +13,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script defer src="https://w.soundcloud.com/player/api.js"></script>
+  <script defer src="./assets/js/beatcut.js"></script>
 </head>
 
 <body>
+  <!-- Background: fast-cut gameplay footage, cut on the beat of the theme song by assets/js/beatcut.js.
+       Shots are listed in assets/clips/clips.json; with none listed this layer stays invisible.
+       data-bpm / data-offset: the song's tempo and where its first beat lands (ms). Tune them with /?tune -->
+  <div class="bg" aria-hidden="true" data-bpm="120" data-offset="0" data-cut-beats="1" data-clips="./assets/clips/clips.json">
+    <video muted playsinline preload="auto" tabindex="-1" disablepictureinpicture disableremoteplayback></video>
+    <video muted playsinline preload="auto" tabindex="-1" disablepictureinpicture disableremoteplayback></video>
+  </div>
+
+  <div class="page">
   <a class="logo">
     <img src="./assets/logo/logo.png" alt="Ad Hoc Gaming">
   </a>
@@ -60,7 +71,7 @@
     </a>
   </div>
 
-  <!-- embedded SoundCloud theme song auto-plays -->
+  <!-- embedded SoundCloud theme song: starts on load and loops (assets/js/beatcut.js drives it via the Widget API) -->
   <div class="links player">
     Theme song
     <div class="player__frame">
@@ -71,7 +82,6 @@
         scrolling="no"
         frameborder="no"
         allow="autoplay"
-        loading="lazy"
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1048573648&color=%234b5fe0&auto_play=true&visual=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&sharing=false&download=false&buying=false"></iframe>
     </div>
   </div>
@@ -80,6 +90,9 @@
     <span class="tagline" aria-label="Get boosted, stay boosted"><span class="wave" aria-hidden="true"><span style="--i:0">G</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3"> </span><span style="--i:4">b</span><span style="--i:5">o</span><span style="--i:6">o</span><span style="--i:7">s</span><span style="--i:8">t</span><span style="--i:9">e</span><span style="--i:10">d</span><span style="--i:11">,</span><span style="--i:12"> </span><span style="--i:13">s</span><span style="--i:14">t</span><span style="--i:15">a</span><span style="--i:16">y</span><span style="--i:17"> </span><span style="--i:18">b</span><span style="--i:19">o</span><span style="--i:20">o</span><span style="--i:21">s</span><span style="--i:22">t</span><span style="--i:23">e</span><span style="--i:24">d</span></span></span>
     <span>&copy; <span id="year">2026</span> Ad Hoc Gaming</span>
   </div>
+  </div>
+
+  <div class="sound-hint" role="status" hidden>🔊 Tap anywhere for the theme song</div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
